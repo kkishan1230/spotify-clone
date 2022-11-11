@@ -8,9 +8,10 @@ function Loader() {
         <span className="relative w-[400px] h-[250px] lg:w-[550px] lg:h-[240px]">
           <Image
             src="https://rb.gy/y9mwtb"
-            layout="fill"
-            objectFit="contain"
+            object-fit="contain"
             className="animate-pulse"
+            width={100}
+            height={100}
           />
         </span>
         <ThreeBounce size={23} color="#15883e" />
