@@ -1,6 +1,5 @@
 import NextAuth from "next-auth";
 import SpotifyProvider from "next-auth/providers/spotify";
-import GoogleProvider from "next-auth/providers/google";
 
 /**
  * Takes a token, and returns a new token with updated
@@ -47,8 +46,7 @@ async function refreshAccessToken(token) {
   }
 }
 
-export const authOptions = {
-  // Configure one or more authentication providers
+export default NextAuth({
   providers: [
     SpotifyProvider({
       clientId: process.env.SPOTIFY_CLIENT_ID,
@@ -56,19 +54,8 @@ export const authOptions = {
       authorization:
         "https://accounts.spotify.com/authorize?scope=user-read-email,playlist-read-private,user-read-email,streaming,user-read-private,user-library-read,user-library-modify,user-read-playback-state,user-modify-playback-state,user-read-recently-played,user-follow-read",
     }),
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      authorization: {
-        params: {
-          scope: "email",
-        },
-      },
-    }),
   ],
-  pages: {
-    signIn: "/auth/signin",
-  },
+
   callbacks: {
     async jwt({ token, user, account }) {
       // Initial sign in
@@ -88,6 +75,9 @@ export const authOptions = {
 
       // Access token has expired, try to update it
       return refreshAccessToken(token);
+      // console
+      console.log("img");
+      console.log(user.image);
     },
     async session({ session, token }) {
       session.user = token.user;
@@ -97,6 +87,4 @@ export const authOptions = {
       return session;
     },
   },
-};
-
-export default NextAuth(authOptions);
+});

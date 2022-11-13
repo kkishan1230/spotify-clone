@@ -14,12 +14,10 @@ function Right({ chooseTrack, spotifyApi }) {
 
   const { accessToken } = session;
   const [recentlyPlayed, setRecentlyPlayed] = useState([]);
-  console.log(recentlyPlayed);
 
   // Recently Played Tracks...
   useEffect(() => {
     if (!accessToken) return;
-
     spotifyApi.getMyRecentlyPlayedTracks({ limit: 20 }).then((res) => {
       setRecentlyPlayed(
         res.body.items.map(({ track }) => {
