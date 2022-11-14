@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import Image from "next/image";
 import { useEffect } from "react";
-import Loader from "../../components/Loader";
+// import Loader from "../../components/Loader";
 
 function Signin({ providers }) {
   const { data: session } = useSession();
@@ -15,7 +15,7 @@ function Signin({ providers }) {
     }
   }, [session]);
 
-  if (session) return <Loader />;
+  // if (session) return <Loader />;
 
   return (
     <div className="bg-black h-screen flex flex-col items-center pt-40 space-y-8">

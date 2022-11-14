@@ -1,25 +1,25 @@
-import { ThreeBounce } from "better-react-spinkit";
-import Image from "next/image";
+// import { ThreeBounce } from "better-react-spinkit";
+// import Image from "next/image";
 
-function Loader() {
-  return (
-    // <div className="h-screen bg-black">
-    //   <div className="pt-40 flex flex-col items-center space-y-4">
-    //     <span className="relative w-[400px] h-[250px] lg:w-[550px] lg:h-[240px]">
-    //       <Image
-    //         src="https://rb.gy/y9mwtb"
-    //         object-fit="contain"
-    //         className="animate-pulse"
-    //         width={100}
-    //         height={100}
-    //         alt="spotify"
-    //       />
-    //     </span>
-    //     <ThreeBounce size={23} color="#15883e" />
-    //   </div>
-    // </div>
-    <div>Loading...</div>
-  );
-}
+// function Loader() {
+//   return (
+//     // <div className="h-screen bg-black">
+//     //   <div className="pt-40 flex flex-col items-center space-y-4">
+//     //     <span className="relative w-[400px] h-[250px] lg:w-[550px] lg:h-[240px]">
+//     //       <Image
+//     //         src="https://rb.gy/y9mwtb"
+//     //         object-fit="contain"
+//     //         className="animate-pulse"
+//     //         width={100}
+//     //         height={100}
+//     //         alt="spotify"
+//     //       />
+//     //     </span>
+//     //     <ThreeBounce size={23} color="#15883e" />
+//     //   </div>
+//     // </div>
+//     <div>Loading...</div>
+//   );
+// }
 
-export default Loader;
+// export default Loader;
