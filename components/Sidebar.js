@@ -17,6 +17,7 @@ function Sidebar() {
         width={56}
         height={56}
         object-fit="contain"
+        alt=""
       />
       <div className="flex flex-col space-y-8">
         <HomeIcon className="sidebarIcon text-white opacity-[0.85]" />

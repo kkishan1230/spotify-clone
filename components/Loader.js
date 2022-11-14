@@ -12,6 +12,7 @@ function Loader() {
             className="animate-pulse"
             width={100}
             height={100}
+            alt="spotify"
           />
         </span>
         <ThreeBounce size={23} color="#15883e" />

@@ -1,12 +1,12 @@
 module.exports = {
   mode: "jit",
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-  darkMode: false, // or 'media' or 'class'
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: true, // or 'media' or 'class'
   theme: {
     extend: {
-      screens: {
-        "2xl": "1500px",
-      },
       keyframes: {
         pulse: {
           "0%, 100%": {
@@ -28,7 +28,7 @@ module.exports = {
   },
   variants: {
     extend: {},
-    scrollbar: ["rounded"],
+    // scrollbar: [""],
   },
   plugins: [
     require("tailwind-scrollbar-hide"),

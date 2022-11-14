@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import Search from "./Search";
 import { useSession } from "next-auth/react";
+import { useEffect, useState } from "react";
 import Poster from "./Poster";
+import Search from "./Search";
 import Track from "./Track";
 
-function Body({ spotifyApi, chooseTrack }) {
+function Body({ chooseTrack, spotifyApi }) {
   const { data: session } = useSession();
   const { accessToken } = session;
   const [search, setSearch] = useState("");
@@ -24,9 +24,7 @@ function Body({ spotifyApi, chooseTrack }) {
     let cancel = false;
 
     spotifyApi.searchTracks(search).then((res) => {
-      if (cancel) {
-        return;
-      }
+      if (cancel) return;
       setSearchResults(
         res.body.tracks.items.map((track) => {
           return {
@@ -44,6 +42,7 @@ function Body({ spotifyApi, chooseTrack }) {
     return () => (cancel = true);
   }, [search, accessToken]);
 
+  // New Releases...
   useEffect(() => {
     if (!accessToken) return;
 
@@ -86,6 +85,7 @@ function Body({ spotifyApi, chooseTrack }) {
                 />
               ))}
       </div>
+
       <div className="flex gap-x-8 absolute min-w-full md:relative ml-6">
         {/* Genres */}
         <div className="hidden xl:inline max-w-[270px]">
